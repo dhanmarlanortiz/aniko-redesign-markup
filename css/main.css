@@ -1,0 +1,576 @@
+/*@import "compass";*/
+@font-face {
+  font-family: futura-light;
+  src: url(../webfonts/futura-pt-light.otf);
+  font-weight: lighter;
+}
+@font-face {
+  font-family: futura-bold;
+  src: url(../webfonts/FuturaPTBold.otf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: futura-book;
+  src: url(../webfonts/FuturaPTBook.otf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: futura-demi;
+  src: url(../webfonts/FuturaPTDemi.otf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: futura-medium;
+  src: url(../webfonts/FuturaPTMedium.otf);
+  font-weight: normal;
+}
+/*** Mixins & Default Styles ***/
+/* line 15, ../sass/modules/_sticky-nav.scss */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 21, ../sass/modules/_sticky-nav.scss */
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/*** Color Variables ***/
+/*** Centering Hack ***/
+/*** Header Styles ***/
+/* line 41, ../sass/modules/_sticky-nav.scss */
+header {
+  width: 100vw;
+  height: calc(100vh-60px);
+  background: #fff;
+  /*display: flex;*/
+}
+/* line 44, ../sass/modules/_sticky-nav.scss */
+header li {
+  margin-left: 25px;
+  list-style: none;
+}
+/* line 47, ../sass/modules/_sticky-nav.scss */
+header li a {
+  width: auto;
+  height: 20px;
+  background: #fff;
+  display: block;
+  border-radius: 90px;
+  color: #bdbdbd;
+  font-family: futura-light;
+  font-size: 14px;
+}
+/* line 54, ../sass/modules/_sticky-nav.scss */
+header li a:hover, header li a:focus {
+  color: #757575;
+  text-decoration: none;
+}
+/* line 59, ../sass/modules/_sticky-nav.scss */
+header li a .fas {
+  margin-right: 5px;
+}
+/* line 65, ../sass/modules/_sticky-nav.scss */
+header .side-menu a {
+  color: #bdbdbd;
+  font-family: futura-light;
+  font-size: 14px;
+}
+
+/* line 74, ../sass/modules/_sticky-nav.scss */
+.burger i {
+  font-size: 22px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  line-height: 7px;
+  display: block;
+  transition: 0.3s;
+}
+/* line 82, ../sass/modules/_sticky-nav.scss */
+.burger:hover, .burgerfocus {
+  text-decoration: none;
+  color: #8F6D4F;
+  transition: 0.3s;
+}
+
+/*** Navigation Styles ***/
+/* line 91, ../sass/modules/_sticky-nav.scss */
+nav {
+  width: 100vw;
+  height: 80px;
+  background: #fff;
+  /*display: grid;*/
+  /*grid-template-columns: 1fr 1fr;*/
+  position: fixed;
+  z-index: 10;
+  transition: all 0.3s;
+  border-bottom: solid 1px #f5f5f6;
+  z-index: 16;
+  top: 0;
+}
+/* line 101, ../sass/modules/_sticky-nav.scss */
+nav.navShadow {
+  /*box-shadow: 0 4px 30px -5px rgba(#000, 0.2);*/
+  box-shadow: 0 2px 10px -5px rgba(0, 0, 0, 0.2);
+  height: 80px;
+}
+/* line 105, ../sass/modules/_sticky-nav.scss */
+nav.navShadow #word-mark {
+  opacity: 0;
+}
+
+/*#brand,
+#menu-right,
+ul {
+	display: flex;
+	align-items: center;
+}
+
+#brand {
+	padding-left: 40px;
+}*/
+/*** Menu Styles ***/
+/*#menu-right {
+	justify-content: flex-end;
+	padding-right: 40px;
+}*/
+/*#menu-toggle {
+	@include object(55px,55px,darken($nav-bg,5%));
+	@include center;
+	border-radius: 50%;
+	cursor: pointer;
+	display: none;
+	&:hover .bar {
+		width: 25px;
+	}
+	&.closeMenu {
+		.bar {
+			width: 25px;
+			&:first-child {
+				transform: translateY(7px) rotate(45deg);
+			}
+			&:nth-child(2) {
+				transform: scale(0);
+			}
+			&:last-child {
+				transform: translateY(-7px) rotate(-45deg);
+			}
+		}
+	}
+}
+*/
+/* line 154, ../sass/modules/_sticky-nav.scss */
+.bar {
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  transition: 0.3s ease-in-out;
+}
+/* line 157, ../sass/modules/_sticky-nav.scss */
+.bar:nth-child(2) {
+  width: 20px;
+  margin: 5px 0;
+}
+/* line 161, ../sass/modules/_sticky-nav.scss */
+.bar:last-child {
+  width: 15px;
+}
+
+/*** Hero Section Styles ***/
+/* line 167, ../sass/modules/_sticky-nav.scss */
+#hero-section {
+  width: 100vw;
+  height: calc(100vh - 140px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+/*** Section Styles ***/
+/*section {
+	@include object(100vw,calc(100vh - 100px),null);
+	display: flex;
+	justify-content: center;
+	&:nth-child(odd) {
+		background: $pink;
+	}
+	&:nth-child(even) {
+		background: $aqua;
+	}
+}*/
+/* line 187, ../sass/modules/_sticky-nav.scss */
+#heading {
+  width: 120px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  margin-top: 40px;
+}
+
+/*** Responsive Menu For Smaller Device ***/
+/*
+@media screen and (max-width: 767px) {
+	#menu-toggle {
+		display: flex;
+	}
+	header {
+		ul {
+			display: inline-block;
+			@include object(100vw,0,$aqua);
+			@include transPos(160px,null,null,null,null,null);
+			box-shadow: 0 5px 30px -4px rgba(#000, 0.2);
+			transition: all 0.3s;
+			&.showMenu {
+				height: 250px;
+				li {
+					height: 80px;
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+		li {
+			@include object(50%,80px,null);
+			float: left;
+			padding-left: 40px;
+			opacity: 0;
+			visibility: hidden;
+			margin-left: 0;
+			transition: all 0.3s 0.1s;
+			&:first-child,
+			&:nth-child(2) {
+				margin-top: 80px;
+			}
+		}
+	}
+}
+*/
+/* line 9, ../sass/main.scss */
+h2 {
+  font-family: futura-book;
+  font-size: 20px;
+  color: #8F6D4F;
+  line-height: 1.3em;
+  margin-bottom: 1rem;
+}
+
+/* line 17, ../sass/main.scss */
+p,
+p a,
+#accordion .card-header h2 button,
+#accordion .card-body {
+  font-family: futura-book;
+  font-size: 18px;
+  color: #757575;
+  line-height: 1.3em;
+}
+
+/* line 28, ../sass/main.scss */
+p a:hover, p a:focus {
+  outline: none;
+  box-shadow: none;
+  color: #8F6D4F;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+/* line 38, ../sass/main.scss */
+.bg-gray {
+  background-color: #f5f5f6;
+}
+/* line 40, ../sass/main.scss */
+.bg-gray input, .bg-gray select {
+  background-color: #f5f5f6;
+}
+/* line 42, ../sass/main.scss */
+.bg-gray input:focus, .bg-gray select:focus {
+  background-color: #f5f5f6;
+}
+
+/* line 48, ../sass/main.scss */
+.text-brown {
+  color: #8F6D4F;
+}
+
+/* line 53, ../sass/main.scss */
+a.text-brown:hover, a.text-brown:focus {
+  color: #757575;
+}
+
+/* line 59, ../sass/main.scss */
+#accordion .card {
+  border: 0;
+  background-color: #f5f5f6;
+}
+/* line 62, ../sass/main.scss */
+#accordion .card .card-header {
+  padding: 0;
+  margin-bottom: 0;
+}
+/* line 66, ../sass/main.scss */
+#accordion .card .card-header h2 button {
+  padding: 10px 0;
+  transition: all 0.3s;
+  background-color: #f5f5f6;
+}
+/* line 70, ../sass/main.scss */
+#accordion .card .card-header h2 button:hover, #accordion .card .card-header h2 button:focus {
+  outline: none;
+  box-shadow: none;
+  color: #8F6D4F;
+  transition: 0.3s;
+  text-decoration: none;
+}
+/* line 78, ../sass/main.scss */
+#accordion .card .card-header h2 button:not(.collapsed) .fa-angle-down {
+  transform: rotate(180deg);
+  /*transition: all 0.3s;*/
+}
+/* line 86, ../sass/main.scss */
+#accordion .card .card-body {
+  padding: 10px 0;
+}
+@media (min-width: 768px) {
+  /* line 58, ../sass/main.scss */
+  #accordion {
+    padding-left: 60px;
+  }
+}
+
+/* line 97, ../sass/main.scss */
+form .form-group {
+  /*margin-bottom: 10px;*/
+}
+/* line 100, ../sass/main.scss */
+form .form-control {
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-radius: 0;
+  padding: 0;
+  color: #757575;
+}
+/* line 107, ../sass/main.scss */
+form .form-control:hover, form .form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #8F6D4F;
+}
+/* line 113, ../sass/main.scss */
+form .btn.btn-primary {
+  font-family: futura-book;
+  font-size: 18px;
+  color: #757575;
+  line-height: 1.3em;
+  background-color: transparent;
+  border-radius: 0;
+  border-color: #ced4da;
+  transition: all 0.3s;
+  padding: 10px 50px;
+}
+/* line 123, ../sass/main.scss */
+form .btn.btn-primary:hover, form .btn.btn-primary:focus {
+  background-color: #8F6D4F;
+  border-color: #8F6D4F;
+  transition: all 0.3s;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  /* line 132, ../sass/main.scss */
+  div.row.wide-gutter {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+  /* line 136, ../sass/main.scss */
+  div.row.wide-gutter div[class^='col-'] {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  /* line 140, ../sass/main.scss */
+  div.row.wide-gutter div[class^='col-'] .section-header, div.row.wide-gutter div[class^='col-'] > p {
+    padding-left: 60px;
+  }
+  /* line 144, ../sass/main.scss */
+  div.row.wide-gutter div[class^='col-'] .section-header:before {
+    content: "/";
+    position: absolute;
+    left: 30px;
+  }
+}
+
+/* line 154, ../sass/main.scss */
+#map, #location {
+  height: 300px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+
+/* line 159, ../sass/main.scss */
+.client-subscribe {
+  font-family: futura-light;
+  font-size: 17px;
+  color: #757575;
+  margin-left: 12px;
+  user-select: none;
+}
+/* line 165, ../sass/main.scss */
+.client-subscribe:hover {
+  cursor: pointer;
+}
+
+/* line 170, ../sass/main.scss */
+.client-subscribe input {
+  display: none;
+  /* Hide the default checkbox */
+}
+
+/* Style the artificial checkbox */
+/* line 175, ../sass/main.scss */
+.client-subscribe span {
+  height: 21px;
+  width: 21px;
+  border: 2px solid #ced4da;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+/* Style its checked state...with a ticked icon */
+/* line 186, ../sass/main.scss */
+.client-subscribe [type=checkbox]:checked + span:before {
+  content: '\2714';
+  position: absolute;
+  top: -4px;
+  left: 1px;
+  font-family: Arial;
+  font-size: 18px;
+  color: #ced4da;
+}
+
+/* line 196, ../sass/main.scss */
+#hero-section .carousel .carousel-inner {
+  height: calc(100vh - 140px);
+  /*overflow: hidden;*/
+  background-color: #757575;
+}
+/* line 200, ../sass/main.scss */
+#hero-section .carousel .carousel-inner .carousel-caption {
+  bottom: auto;
+  top: calc(100vh - 220px);
+}
+/* line 203, ../sass/main.scss */
+#hero-section .carousel .carousel-inner .carousel-caption h5 {
+  font-size: 30px;
+  font-family: futura-book;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* line 211, ../sass/main.scss */
+.hero-subtext {
+  margin: 17px 0;
+  padding: 0 22px;
+  display: inline-block;
+  font-family: futura-light;
+  position: relative;
+}
+/* line 217, ../sass/main.scss */
+.hero-subtext:before, .hero-subtext:after {
+  content: "/";
+  position: absolute;
+}
+/* line 222, ../sass/main.scss */
+.hero-subtext:before {
+  left: 0;
+}
+/* line 226, ../sass/main.scss */
+.hero-subtext:after {
+  right: 0;
+}
+
+/* line 231, ../sass/main.scss */
+#carousel:before {
+  content: "/ NO. 1 GRANT AVENUE /";
+  position: absolute;
+  z-index: 15;
+  transform: rotate(-90deg);
+  font-size: 14px;
+  font-family: futura-book;
+  left: -100px;
+  top: 48%;
+  color: #bdbdbd;
+}
+
+@media (min-width: 768px) {
+  /* line 242, ../sass/main.scss */
+  .carousel-indicators {
+    flex-direction: column;
+    position: absolute;
+    right: -30px;
+    bottom: auto;
+    left: auto;
+    z-index: 15;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 15px 0;
+  }
+  /* line 261, ../sass/main.scss */
+  .carousel-indicators:before, .carousel-indicators:after {
+    content: "/";
+    transform: rotate(90deg);
+    position: absolute;
+    left: 7px;
+    color: #bdbdbd;
+    /*color: $brown;*/
+  }
+  /* line 270, ../sass/main.scss */
+  .carousel-indicators:before {
+    top: -5px;
+  }
+  /* line 273, ../sass/main.scss */
+  .carousel-indicators:after {
+    bottom: -5px;
+  }
+}
+/* line 277, ../sass/main.scss */
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: solid 1px #bdbdbd;
+  display: block;
+  margin: 3px;
+}
+/* line 284, ../sass/main.scss */
+.carousel-indicators li.active {
+  background-color: #bdbdbd;
+  opacity: 1;
+}
+
+/* line 292, ../sass/main.scss */
+footer p, footer p > a, footer ul > li a {
+  font-family: futura-light;
+  font-size: 13px;
+  color: #bdbdbd;
+  line-height: 1.3em;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s;
+}
+/* line 301, ../sass/main.scss */
+footer ul > li > a:hover, footer ul > li > a:focus {
+  color: #8F6D4F;
+  transition: all 0.3s;
+}

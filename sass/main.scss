@@ -1,0 +1,307 @@
+/*@import "compass";*/
+$brown: #8F6D4F;
+$black: #757575;
+$gray: #f5f5f6;
+@import "libs/fonts";
+@import "modules/sticky-nav";
+
+
+h2 {
+	font-family: futura-book;
+	font-size: 20px;
+	color: $brown;
+	line-height: 1.3em;
+	margin-bottom: 1rem;	
+}
+
+p,
+p a,
+#accordion .card-header h2 button,
+#accordion .card-body {
+	font-family: futura-book;
+	font-size: 18px;
+	color: $black;
+	line-height: 1.3em;
+}
+
+p a {
+	&:hover,
+	&:focus {
+		outline: none;
+		box-shadow: none;
+		color: $brown;
+		transition: 0.3s;
+		text-decoration: none;
+	}
+}
+
+.bg-gray {
+	background-color: $gray;
+	input, select {
+		background-color: $gray;
+		&:focus {
+			background-color: $gray;
+		}
+	}
+}
+
+.text-brown {
+	color: $brown;
+}
+
+a.text-brown {
+	&:hover, &:focus {
+		color: $black;
+	}
+}
+
+#accordion {
+	.card {
+		border: 0;
+		background-color: $gray;	
+		.card-header {
+			padding: 0;			
+			margin-bottom: 0;
+			h2 {
+				button {
+					padding: 10px 0;
+					transition: all 0.3s;
+					background-color: $gray;
+					&:hover,
+					&:focus {
+						outline: none;
+						box-shadow: none;
+						color: $brown;
+						transition: 0.3s;
+						text-decoration: none;
+					}					
+					&:not(.collapsed) .fa-angle-down {
+						transform: rotate(180deg);
+						/*transition: all 0.3s;*/
+					}
+				}
+			}
+		}
+
+		.card-body {
+			padding: 10px 0;
+		}
+	}	
+
+	@media (min-width: 768px) {
+		padding-left: 60px;
+	}
+}
+
+form {
+	.form-group {
+		/*margin-bottom: 10px;*/
+	}
+	.form-control{
+		border-left: 0;
+		border-right: 0;
+		border-top: 0;
+		border-radius: 0;
+		padding: 0;
+		color: $black;
+		&:hover, &:focus {
+			outline: none;
+			box-shadow: none;
+			border-color: $brown;
+		}
+	}
+	.btn.btn-primary {
+		font-family: futura-book;
+		font-size: 18px;
+		color: $black;
+		line-height: 1.3em;
+		background-color: transparent;
+		border-radius: 0;
+		border-color: #ced4da;
+		transition: all 0.3s;
+		padding: 10px 50px;
+		&:hover, &:focus {
+			background-color: $brown;
+			border-color: $brown;
+			transition: all 0.3s;
+			color: #fff;
+		}
+	}
+}
+
+div.row.wide-gutter {
+	@media (min-width: 768px) {
+		margin-left: -30px;
+		margin-right: -30px;
+		div[class^='col-'] {
+			padding-left: 30px;
+			padding-right: 30px;
+		
+			.section-header, > p {
+				padding-left: 60px;
+			}	
+			.section-header {
+				&:before {
+					content: "/";
+					position: absolute;
+			    	left: 30px;
+				}
+			}
+		}
+	}
+}
+
+#map, #location {
+	height: 300px;  /* The height is 400 pixels */
+	width: 100%;  /* The width is the width of the web page */
+}
+
+.client-subscribe {
+	font-family: futura-light;
+    font-size: 17px;
+    color: $black;
+    margin-left: 12px;
+    user-select: none;
+    &:hover {
+    	cursor: pointer;
+    }
+}
+
+.client-subscribe input {
+	display: none; /* Hide the default checkbox */
+}
+
+/* Style the artificial checkbox */
+.client-subscribe span {
+	height: 21px;
+    width: 21px;
+    border: 2px solid #ced4da;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+/* Style its checked state...with a ticked icon */
+.client-subscribe [type=checkbox]:checked + span:before {
+	content: '\2714';
+	position: absolute;
+	top: -4px;
+	left: 1px;
+	font-family: Arial;
+	font-size: 18px;
+	color: #ced4da;
+}
+
+#hero-section .carousel .carousel-inner {
+	height: calc(100vh - 140px);
+	/*overflow: hidden;*/
+	background-color: $black;
+	.carousel-caption {
+		bottom: auto;
+		top: calc(100vh - 220px);
+		h5 {
+			font-size: 30px;
+			font-family: futura-book;
+			text-shadow: 0 2px 2px rgba(0,0,0,0.5);
+		}
+	}
+}
+
+.hero-subtext {
+    margin: 17px 0;
+    padding: 0 22px;
+    display: inline-block;
+    font-family: futura-light;
+    position: relative;
+    &:before,
+    &:after {
+    	content: "/";
+    	position: absolute;
+    }
+    &:before {
+		left: 0;
+    }
+
+    &:after {
+		right: 0;
+    }
+}
+
+#carousel:before {
+	content: "/ NO. 1 GRANT AVENUE /";
+    position: absolute;
+	z-index: 15;
+	transform: rotate(-90deg);
+	font-size: 14px;
+	font-family: futura-book;
+	left: -100px;
+	top: 48%;
+	color: #bdbdbd;
+}
+.carousel-indicators {
+	@media (min-width: 768px) {
+		flex-direction: column;
+		position: absolute;
+		right: -30px;
+		bottom: auto; 
+		left: auto; 
+		z-index: 15;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-pack: center;
+		justify-content: center;
+		padding-left: 0;
+		list-style: none;
+		margin: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		padding: 15px 0;
+
+		&:before,
+	    &:after {
+	    	content: "/";
+	    	transform: rotate(90deg);
+	    	position: absolute;
+	    	left: 7px;
+	    	color: #bdbdbd;
+	    	/*color: $brown;*/
+	    }		 
+	    &:before {
+	    	top: -5px;
+	    }   
+	    &:after {
+	    	bottom: -5px;
+	    }
+	}		
+	li {
+	    width: 10px;
+    	height: 10px;
+    	border-radius: 50%;
+    	border: solid 1px #bdbdbd;
+    	display: block;
+    	margin: 3px;
+    	&.active {
+    		background-color: #bdbdbd;
+    		opacity: 1;
+    	}
+	}		
+}
+
+footer {
+	p, p > a, ul > li a {
+		font-family: futura-light;
+		font-size: 13px;
+		color: #bdbdbd;
+		line-height: 1.3em;
+		margin-bottom: 0.5rem;	
+		transition: all 0.3s;
+	}
+	ul > li > a {
+		&:hover, &:focus {
+			color: $brown;
+			transition: all 0.3s;
+		}
+	}
+}
+
