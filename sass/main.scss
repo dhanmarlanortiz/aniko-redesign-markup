@@ -51,7 +51,7 @@ p a {
 
 a.text-brown {
 	&:hover, &:focus {
-		color: $black;
+		color: #bdbdbd;
 	}
 }
 
@@ -304,4 +304,71 @@ footer {
 		}
 	}
 }
+#sidebar {
+	position: fixed;
+    z-index: 17;
+    top: 0;
+    height: 100%;
+    background: #fff;
+    padding: 30px;
+    min-width: 250px;
+    left: -250px;
+    transition: 0.3s;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    &.slidein {
+    	left: 0px;
+    	transition: 0.3s;
+    }
+    ul a, ul button {
+    	font-family: futura-light, arial;
+    	color: $black;
+    	transition: all 0.3s;
+    	font-size: 20px;
+		display: block;
+		width: 100%;
+		text-align: left;
+		margin: 0;
+		border: none;
+		background: none;
+		padding: 0;
 
+    	&:hover, &:focus {
+    		color: $brown;
+    		transition: all 0.3s;
+    		text-decoration: none;
+    		outline: none;
+    		box-shadow: none;
+    		border: none;
+    	}
+    }
+
+    ul li {
+		list-style: none;
+		margin: 5px 0;    	
+    }
+
+    > ul > li {
+		margin: 15px 0;    	
+    }
+
+
+}
+
+#enquire {
+	position: fixed;
+    z-index: 17;
+    top: 0;
+    height: 100%;
+    background: #fff;
+    padding: 30px;
+    min-width: 300px;
+    right: -300px;
+    transition: 0.3s;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    &.slidein {
+    	right: 0px;
+    	transition: 0.3s;
+    }
+
+
+}

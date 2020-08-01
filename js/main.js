@@ -33,6 +33,19 @@ $( () => {
 	// 	});
 	// });
 
+	$('.sidebar-toggle').on('click', () => {
+		$('#sidebar').toggleClass('slidein');		
+		$('#enquire').removeClass('slidein');		
+
+	});
+
+	$('.enquire-toggle').on('click', () => {
+		$('#enquire').toggleClass('slidein');		
+		$('#sidebar').removeClass('slidein');		
+	});
+
+
+
 	$('#accordion button[data-toggle="collapse"]').on('click', function(e){
 		$('#gallery .gallery-item').removeClass('active show');
 		$('#gallery ' + $(this).attr('data-target').replace("#", ".")).addClass('active show');

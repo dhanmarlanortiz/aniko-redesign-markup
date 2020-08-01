@@ -80,7 +80,7 @@ header .side-menu a {
   font-size: 14px;
 }
 
-/* line 74, ../sass/modules/_sticky-nav.scss */
+/* line 76, ../sass/modules/_sticky-nav.scss */
 .burger i {
   font-size: 22px;
   font-family: Arial, sans-serif;
@@ -88,16 +88,36 @@ header .side-menu a {
   line-height: 7px;
   display: block;
   transition: 0.3s;
+  color: #757575;
 }
-/* line 82, ../sass/modules/_sticky-nav.scss */
+/* line 85, ../sass/modules/_sticky-nav.scss */
 .burger:hover, .burgerfocus {
   text-decoration: none;
   color: #8F6D4F;
   transition: 0.3s;
 }
 
+/* line 93, ../sass/modules/_sticky-nav.scss */
+.sidebar-toggle,
+.enquire-toggle {
+  border: none;
+  background: none;
+  transition: 0.3s;
+  color: #bdbdbd;
+}
+/* line 99, ../sass/modules/_sticky-nav.scss */
+.sidebar-toggle:hover, .sidebar-togglefocus,
+.enquire-toggle:hover,
+.enquire-togglefocus {
+  color: #8F6D4F;
+  outline: none !important;
+  border: none;
+  box-shadow: none;
+  transition: 0.3s;
+}
+
 /*** Navigation Styles ***/
-/* line 91, ../sass/modules/_sticky-nav.scss */
+/* line 111, ../sass/modules/_sticky-nav.scss */
 nav {
   width: 100vw;
   height: 80px;
@@ -111,13 +131,13 @@ nav {
   z-index: 16;
   top: 0;
 }
-/* line 101, ../sass/modules/_sticky-nav.scss */
+/* line 121, ../sass/modules/_sticky-nav.scss */
 nav.navShadow {
   /*box-shadow: 0 4px 30px -5px rgba(#000, 0.2);*/
   box-shadow: 0 2px 10px -5px rgba(0, 0, 0, 0.2);
   height: 80px;
 }
-/* line 105, ../sass/modules/_sticky-nav.scss */
+/* line 125, ../sass/modules/_sticky-nav.scss */
 nav.navShadow #word-mark {
   opacity: 0;
 }
@@ -162,25 +182,25 @@ ul {
 	}
 }
 */
-/* line 154, ../sass/modules/_sticky-nav.scss */
+/* line 174, ../sass/modules/_sticky-nav.scss */
 .bar {
   width: 25px;
   height: 2px;
   background: #fff;
   transition: 0.3s ease-in-out;
 }
-/* line 157, ../sass/modules/_sticky-nav.scss */
+/* line 177, ../sass/modules/_sticky-nav.scss */
 .bar:nth-child(2) {
   width: 20px;
   margin: 5px 0;
 }
-/* line 161, ../sass/modules/_sticky-nav.scss */
+/* line 181, ../sass/modules/_sticky-nav.scss */
 .bar:last-child {
   width: 15px;
 }
 
 /*** Hero Section Styles ***/
-/* line 167, ../sass/modules/_sticky-nav.scss */
+/* line 187, ../sass/modules/_sticky-nav.scss */
 #hero-section {
   width: 100vw;
   height: calc(100vh - 140px);
@@ -202,7 +222,7 @@ ul {
 		background: $aqua;
 	}
 }*/
-/* line 187, ../sass/modules/_sticky-nav.scss */
+/* line 207, ../sass/modules/_sticky-nav.scss */
 #heading {
   width: 120px;
   height: 20px;
@@ -298,7 +318,7 @@ p a:hover, p a:focus {
 
 /* line 53, ../sass/main.scss */
 a.text-brown:hover, a.text-brown:focus {
-  color: #757575;
+  color: #bdbdbd;
 }
 
 /* line 59, ../sass/main.scss */
@@ -573,4 +593,74 @@ footer p, footer p > a, footer ul > li a {
 footer ul > li > a:hover, footer ul > li > a:focus {
   color: #8F6D4F;
   transition: all 0.3s;
+}
+
+/* line 307, ../sass/main.scss */
+#sidebar {
+  position: fixed;
+  z-index: 17;
+  top: 0;
+  height: 100%;
+  background: #fff;
+  padding: 30px;
+  min-width: 250px;
+  left: -250px;
+  transition: 0.3s;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+/* line 318, ../sass/main.scss */
+#sidebar.slidein {
+  left: 0px;
+  transition: 0.3s;
+}
+/* line 322, ../sass/main.scss */
+#sidebar ul a, #sidebar ul button {
+  font-family: futura-light, arial;
+  color: #757575;
+  transition: all 0.3s;
+  font-size: 20px;
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  border: none;
+  background: none;
+  padding: 0;
+}
+/* line 335, ../sass/main.scss */
+#sidebar ul a:hover, #sidebar ul a:focus, #sidebar ul button:hover, #sidebar ul button:focus {
+  color: #8F6D4F;
+  transition: all 0.3s;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+/* line 345, ../sass/main.scss */
+#sidebar ul li {
+  list-style: none;
+  margin: 5px 0;
+}
+/* line 350, ../sass/main.scss */
+#sidebar > ul > li {
+  margin: 15px 0;
+}
+
+/* line 357, ../sass/main.scss */
+#enquire {
+  position: fixed;
+  z-index: 17;
+  top: 0;
+  height: 100%;
+  background: #fff;
+  padding: 30px;
+  min-width: 300px;
+  right: -300px;
+  transition: 0.3s;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+/* line 368, ../sass/main.scss */
+#enquire.slidein {
+  right: 0px;
+  transition: 0.3s;
 }
